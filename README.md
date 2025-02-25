@@ -9,6 +9,26 @@ This project demonstrates how to build and train a neural network for binary cla
 - **Torchmetrics**: Used to calculate accuracy and evaluate model performance in a structured way.
 - **Matplotlib**: Utilized for visualizing data distribution and plotting the decision boundary of the trained model.
 
+## **Features**
+
+### **Dataset Generation**
+- Uses Scikit-Learn's `make_moons()` to generate a synthetic dataset with **1000 samples** and a small amount of noise.
+- Data is converted into **PyTorch tensors** and split into **training (80%) and testing (20%)** sets.
+
+### **Neural Network Model**
+- A **fully connected feedforward neural network** built using `torch.nn.Module`.
+- **Three-layer architecture** with **ReLU activation** for non-linearity.
+- The final layer outputs **logits** for binary classification.
+
+### **Training and Optimization**
+- Uses **Binary Cross Entropy with Logits Loss (BCEWithLogitsLoss)** for classification.
+- **Stochastic Gradient Descent (SGD)** as the optimizer.
+- Trained for **1000 epochs** with accuracy tracking.
+
+### **Evaluation and Visualization**
+- Model performance is evaluated using **accuracy and loss metrics**.
+- A **decision boundary plot** is generated to visualize the classifier's performance.
+
 ## **Installation Instructions**
 
 To run the project, you’ll need to install the following dependencies. You can set up your environment and install the required packages using the `requirements.txt` file.
@@ -35,6 +55,12 @@ Once the virtual environment is activated, run the following command to install 
 ```bash
 pip install -r requirements.txt
 ```
+
+### 4. Run main.py:
+Once the dependencies has been installed in step3,
+```bash
+python3 main.py
+```
 Raw data (moon dataset):
 
 ![Decision Boundary](images/raw_data.png)
@@ -42,5 +68,6 @@ Raw data (moon dataset):
 Binary classification:
 
 ![Decision Boundary](images/nn_classification_result_trained_model.png)
+
 
 
